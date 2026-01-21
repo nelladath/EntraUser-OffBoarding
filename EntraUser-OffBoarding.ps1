@@ -9,12 +9,6 @@
 
 ############################################################################
 
-#Set-ExecutionPolicy
-
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-
-# ===============================
 
 # ENTRA ID- FULL OFFBOARDING
 
@@ -31,6 +25,12 @@ if (-not $userUPN)
     $userUPN = Read-Host "Enter the user UPN to offboard"
 }
 
+#Set-ExecutionPolicy
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+
+# ===============================
 
 # Connect to Microsoft Graph
 
@@ -441,5 +441,6 @@ else
 Write-Host "`n===============================" -ForegroundColor Green
 
 Write-Host " CHECKLIST COMPLETE" -ForegroundColor Green
+
 
 Write-Host "==============================="
